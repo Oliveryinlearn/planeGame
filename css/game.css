@@ -63,3 +63,68 @@ body {
     text-align: center;
     position: absolute;
 }
+.enemy_1{
+    width: 59px;
+    height: 36px;
+    position: fixed;
+    z-index: 1;
+    background: url(../images/enemy1.png) no-repeat left top;
+}
+.enemy_1_effect {
+    animation: enemy_1_effect 0.5s steps(5) both infinite;
+    -webkit-animation: enemy_1_effect 0.5s steps(5) both infinite;
+}
+/* 敌机1-爆炸效果 */
+@keyframes enemy_1_effect {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -295px 0;
+    }
+}
+
+@-webkit-keyframes enemy_1_effect {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -295px 0;
+    }
+}
+/* 敌机2 */
+.enemy_2 {
+    width: 70px;
+    height: 92px;
+    position: fixed;
+    z-index: 1;
+    background: url(../images/enemy2.png) no-repeat left top;
+}
+
+.enemy_2_effect {
+    animation: enemy_2_effect 0.5s steps(6) both infinite;
+    -webkit-animation: enemy_2_effect 0.5s steps(6) both infinite;
+}
+
+/* 敌机2-爆炸效果 */
+@keyframes enemy_2_effect {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -420px 0;
+    }
+}
+
+@weblit-keyframes enemy_2_effect {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -420px 0;
+    }
+}

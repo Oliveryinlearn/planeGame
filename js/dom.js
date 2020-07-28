@@ -1,3 +1,4 @@
+import util from "./util.js";
 const dom = {
     box: document.createElement("div"),
     room: document.body,
@@ -16,23 +17,27 @@ const dom = {
      * 
      * @param {*} tpl 初始化的模版
      */
-    create(tpl){
+    create(tpl) {
         this.box.innerHTML = "";
         this.box.innerHTML = tpl;
-        console.log(this)
         let el = this.box.firstElementChild;
-        return el
+        util.elPointTransform(el, "x");
+        util.elPointTransform(el, "y");
+        return el;
     },
-    insert(el){
+    insert(el) {
         this.room.appendChild(el);
         /**
          * getBoundingClientRect():返回元素的大小及其相对于视口的位置
          * 这个方法在IE4就开始支持了
          */
-        let { width, height } = el.getBoundingClientRect();
-        // el._width = width;
-        // el._height = height;
-        console.log(el)
+        let {
+            width,
+            height
+        } = el.getBoundingClientRect();
+        //给dom添加私有属性
+        el._width = width;
+        el._height = height;
     }
 }
 export default dom;
