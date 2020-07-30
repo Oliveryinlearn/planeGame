@@ -18,6 +18,7 @@ const dom = {
      * @param {*} tpl 初始化的模版
      */
     create(tpl) {
+        //因为字符串不是dom，需要先创建
         this.box.innerHTML = "";
         this.box.innerHTML = tpl;
         let el = this.box.firstElementChild;

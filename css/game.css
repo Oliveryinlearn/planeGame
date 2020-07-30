@@ -1,20 +1,25 @@
-*{
+* {
     margin: 0;
     padding: 0;
     border: 0;
 }
-html{
+
+html {
     font-size: 14px;
 }
-html,body{
+
+html,
+body {
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
+
 body {
     background: url("../images/bg.jpg") left top;
 }
-.game_start{
+
+.game_start {
     width: 20rem;
     height: 74%;
     position: fixed;
@@ -22,10 +27,12 @@ body {
     left: 50%;
     transform: translateX(-50%);
 }
-.game_start .logo{
+
+.game_start .logo {
     width: 100%;
 }
-.game_start .processing{
+
+.game_start .processing {
     width: 200px;
     height: 40px;
     margin: 40px auto 0;
@@ -33,24 +40,29 @@ body {
     animation: processing_effect 1.5s steps(3) both infinite;
     -webkit-animation: processing_effect 1.5s steps(3) both infinite;
 }
+
 /* 动画 */
-@keyframes processing_effect{
-    0%{
+@keyframes processing_effect {
+    0% {
         background-position: 0 0;
     }
-    100%{
+
+    100% {
         background-position: 0 -123px;
     }
 }
-@-webkit-keyframes processing_effect{
-    0%{
+
+@-webkit-keyframes processing_effect {
+    0% {
         background-position: 0 0;
     }
-    100%{
+
+    100% {
         background-position: 0 -123px;
     }
 }
-.game_start .btn{
+
+.game_start .btn {
     bottom: 1rem;
     border: 3px solid #3a3939;
     width: 70%;
@@ -63,17 +75,20 @@ body {
     text-align: center;
     position: absolute;
 }
-.enemy_1{
+
+.enemy_1 {
     width: 59px;
     height: 36px;
     position: fixed;
     z-index: 1;
     background: url(../images/enemy1.png) no-repeat left top;
 }
+
 .enemy_1_effect {
     animation: enemy_1_effect 0.5s steps(5) both infinite;
     -webkit-animation: enemy_1_effect 0.5s steps(5) both infinite;
 }
+
 /* 敌机1-爆炸效果 */
 @keyframes enemy_1_effect {
     0% {
@@ -94,6 +109,7 @@ body {
         background-position: -295px 0;
     }
 }
+
 /* 敌机2 */
 .enemy_2 {
     width: 70px;
@@ -127,4 +143,79 @@ body {
     100% {
         background-position: -420px 0;
     }
+}
+
+/* 飞机 */
+.plane {
+    position: fixed;
+    width: 98px;
+    height: 122px;
+    z-index: 3;
+    background: url(../images/plane.png) no-repeat left top;
+}
+
+.plane_effect {
+    animation: plane_effect 0.5s steps(5) both infinite;
+    -webkit-animation: plane_effect 0.5s steps(5) both infinite;
+}
+
+/* 飞机-爆炸效果 */
+@keyframes plane_effect {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -490px 0;
+    }
+}
+
+@-webkit-keyframes plane_effect {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -490px 0;
+    }
+}
+
+/* 子弹 */
+.bullet {
+    width: 7px;
+    height: 18px;
+    position: fixed;
+    z-index: 2;
+    background: url(../images/bullet.png) no-repeat left top;
+}
+
+.bullet_effect {
+    display: none;
+}
+/* 分数 */
+.fraction {
+    font-size: 24px;
+    padding-left: 20px;
+    padding-top: 20px;
+    position: fixed;
+    z-index: 10;
+}
+
+.fraction span {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.fraction span.fix {
+    top: 20px;
+    right: 0px;
+    position: absolute;
+}
+
+.fraction span.effect {
+    transition: all 0.3s ease-out;
+    transform: scale(2, 2);
+    -webkit-transition: all 0.3s ease-out;
+    -webkit-transform: scale(2, 2);
+    opacity: 0;
 }
